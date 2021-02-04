@@ -9,7 +9,7 @@ import UIKit
 
 class ContactListViewController: UIViewController {
 
-    // Tableview containing the contact cell
+    // TableView Containing the Contact Cell
     private lazy var tableview: UITableView = {
         let tableview = UITableView(frame: .zero)
         tableview.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +33,10 @@ class ContactListViewController: UIViewController {
         super.loadView()
         
         /* Add view's subviews here */
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.prefetchDataSource = self
+        view.addSubview(tableview)
         
         self.setConstraints()
     }
@@ -40,6 +44,7 @@ class ContactListViewController: UIViewController {
     // Creating constraints
     private func setConstraints() {
         
+        // Customize with size class
         switch (UIScreen.main.traitCollection.horizontalSizeClass, UIScreen.main.traitCollection.verticalSizeClass) {
         case (UIUserInterfaceSizeClass.compact, UIUserInterfaceSizeClass.compact):
             break
@@ -53,8 +58,38 @@ class ContactListViewController: UIViewController {
             break
         }
         
+        // Customize constraints for size class (every, every)
+        NSLayoutConstraint.activate([
+            tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 
 
+}
+
+// MARK: UITableViewDelegate
+extension ContactListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
+}
+
+// MARK: UITableViewDataSource
+extension ContactListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+// MARK: UITableViewDataSourcePrefetching
+extension ContactListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    }
 }
 
