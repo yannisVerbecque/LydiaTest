@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow.init(frame: UIScreen.main.bounds)
 
-        let listVC = ViewController()
+        let listVC = ContactListViewController()
         let navViewController = UINavigationController(rootViewController: listVC)
         navViewController.view.translatesAutoresizingMaskIntoConstraints = false
         

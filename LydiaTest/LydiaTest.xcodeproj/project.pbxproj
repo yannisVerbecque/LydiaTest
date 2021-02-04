@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2125C9BFC1007AAB76 /* AppDelegate.swift */; };
-		0E2B4F2625C9BFC1007AAB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2525C9BFC1007AAB76 /* ViewController.swift */; };
+		0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2525C9BFC1007AAB76 /* ContactListViewController.swift */; };
 		0E2B4F2C25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2A25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld */; };
 		0E2B4F2E25C9BFC2007AAB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2D25C9BFC2007AAB76 /* Assets.xcassets */; };
 		0E2B4F3125C9BFC2007AAB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2F25C9BFC2007AAB76 /* LaunchScreen.storyboard */; };
 		0E2B4F3C25C9BFC2007AAB76 /* LydiaTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F3B25C9BFC2007AAB76 /* LydiaTestTests.swift */; };
 		0E2B4F4725C9BFC2007AAB76 /* LydiaTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F4625C9BFC2007AAB76 /* LydiaTestUITests.swift */; };
+		0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F6225C9FCA4007AAB76 /* Contact.swift */; };
+		0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */; };
+		0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FB225CB49D400D6D5AF /* ContactManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		0E2B4F1E25C9BFC1007AAB76 /* LydiaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LydiaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2B4F2125C9BFC1007AAB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E2B4F2525C9BFC1007AAB76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E2B4F2525C9BFC1007AAB76 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		0E2B4F2B25C9BFC1007AAB76 /* LydiaTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LydiaTest.xcdatamodel; sourceTree = "<group>"; };
 		0E2B4F2D25C9BFC2007AAB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2B4F3025C9BFC2007AAB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		0E2B4F4225C9BFC2007AAB76 /* LydiaTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LydiaTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2B4F4625C9BFC2007AAB76 /* LydiaTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LydiaTestUITests.swift; sourceTree = "<group>"; };
 		0E2B4F4825C9BFC2007AAB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E2B4F6225C9FCA4007AAB76 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		0EB38FB225CB49D400D6D5AF /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,9 @@
 		0E2B4F2025C9BFC1007AAB76 /* LydiaTest */ = {
 			isa = PBXGroup;
 			children = (
+				0E2B4F6125C9FC89007AAB76 /* Model */,
 				0E2B4F5D25C9C534007AAB76 /* ViewController */,
 				0E2B4F2125C9BFC1007AAB76 /* AppDelegate.swift */,
-				0E2B4F2525C9BFC1007AAB76 /* ViewController.swift */,
 				0E2B4F2D25C9BFC2007AAB76 /* Assets.xcassets */,
 				0E2B4F2F25C9BFC2007AAB76 /* LaunchScreen.storyboard */,
 				0E2B4F3225C9BFC2007AAB76 /* Info.plist */,
@@ -129,8 +135,19 @@
 		0E2B4F5D25C9C534007AAB76 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E2B4F2525C9BFC1007AAB76 /* ContactListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0E2B4F6125C9FC89007AAB76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */,
+				0E2B4F6225C9FCA4007AAB76 /* Contact.swift */,
+				0EB38FB225CB49D400D6D5AF /* ContactManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2B4F2625C9BFC1007AAB76 /* ViewController.swift in Sources */,
+				0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */,
+				0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */,
+				0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */,
 				0E2B4F2C25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld in Sources */,
+				0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */,
 				0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
