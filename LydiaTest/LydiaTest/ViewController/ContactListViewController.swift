@@ -9,22 +9,37 @@ import UIKit
 
 class ContactListViewController: UIViewController {
 
+    // contact reuse identifier
+    private let contactCellReuseIdentifier: String = "contactCell"
+    
     // TableView Containing the Contact Cell
     private lazy var tableview: UITableView = {
         let tableview = UITableView(frame: .zero)
         tableview.translatesAutoresizingMaskIntoConstraints = false
-//        tableview.register(PostTableViewCell.self, forCellReuseIdentifier: "contactCell")
-        tableview.rowHeight = 200
-        tableview.backgroundColor = .orange
+        tableview.register(ContactTableViewCell.self, forCellReuseIdentifier: contactCellReuseIdentifier)
+        tableview.rowHeight = 150
         return tableview
     }()
+    
+    private var contactManager: ContactManager = ContactManager()
     
     // Called when view is fully loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        title = "People"     
+        title = "People"
+        
+        contactManager.downloadContacts { [weak self] (isDownloadSuccess) in
+            if isDownloadSuccess {
+                DispatchQueue.main.async {
+                    self?.tableview.reloadData()
+                }
+            } else {
+                // fetch coredata last session
+            }
+        }
+        
     }
     
     // Adding the views and customize them
@@ -79,11 +94,12 @@ extension ContactListViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.contactManager.resquests.compactMap { $0.results.count }.reduce(0, +)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = ContactTableViewCell(style: .default, reuseIdentifier: contactCellReuseIdentifier)
+        return cell
     }
 }
 
