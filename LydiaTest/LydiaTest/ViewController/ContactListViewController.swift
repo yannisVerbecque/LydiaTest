@@ -94,11 +94,12 @@ extension ContactListViewController: UITableViewDelegate {
 // MARK: UITableViewDataSource
 extension ContactListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contactManager.resquests.compactMap { $0.results.count }.reduce(0, +)
+        return self.contactManager.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ContactTableViewCell(style: .default, reuseIdentifier: contactCellReuseIdentifier)
+        cell.contact = self.contactManager.getContactAtIndexPath(indexPath)
         return cell
     }
 }
