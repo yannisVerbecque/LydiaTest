@@ -22,6 +22,7 @@ class ContactListViewController: UIViewController {
     }()
     
     private var contactManager: ContactManager = ContactManager()
+    private var isLoadingData: Bool = false
     
     // Called when view is fully loaded
     override func viewDidLoad() {
@@ -30,15 +31,7 @@ class ContactListViewController: UIViewController {
         view.backgroundColor = .white
         title = "People"
         
-        contactManager.downloadContacts { [weak self] (isDownloadSuccess) in
-            if isDownloadSuccess {
-                DispatchQueue.main.async {
-                    self?.tableview.reloadData()
-                }
-            } else {
-                // fetch coredata last session
-            }
-        }
+        self.downloadTenContact()
         
     }
     
@@ -53,6 +46,7 @@ class ContactListViewController: UIViewController {
         tableview.prefetchDataSource = self
         view.addSubview(tableview)
         
+        /* Add constraints */
         self.setConstraints()
     }
     
@@ -61,25 +55,43 @@ class ContactListViewController: UIViewController {
         
         // Customize with size class
         switch (UIScreen.main.traitCollection.horizontalSizeClass, UIScreen.main.traitCollection.verticalSizeClass) {
+            // small screen sizes
         case (UIUserInterfaceSizeClass.compact, UIUserInterfaceSizeClass.compact):
             break
+            // portrait iphone or portrait split view
         case (UIUserInterfaceSizeClass.compact, UIUserInterfaceSizeClass.regular):
             break
+            // ipad or 4:3 split view
         case (UIUserInterfaceSizeClass.regular, UIUserInterfaceSizeClass.regular):
             break
+            // landscape iphone 
         case (UIUserInterfaceSizeClass.regular, UIUserInterfaceSizeClass.compact):
             break
         default:
             break
         }
         
-        // Customize constraints for size class (every, every)
+        // Customize constraints for every size class (every, every)
         NSLayoutConstraint.activate([
             tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func downloadTenContact() -> Void {
+        self.isLoadingData = true
+        contactManager.downloadContacts { [weak self] (isDownloadSuccess) in
+            if isDownloadSuccess {
+                self?.isLoadingData = false
+                DispatchQueue.main.async {
+                    self?.tableview.reloadData()
+                }
+            } else {
+                // fetch coredata last session saved
+            }
+        }
     }
 
 
@@ -110,3 +122,13 @@ extension ContactListViewController: UITableViewDataSourcePrefetching {
     }
 }
 
+// MARK: UIScrollViewDelegate inherited from the tableview
+extension ContactListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset: CGFloat = scrollView.contentOffset.y
+        let contentHeight: CGFloat = scrollView.contentSize.height
+        if (yOffset > contentHeight - scrollView.frame.height) && !isLoadingData {
+            self.downloadTenContact()
+        }
+    }
+}

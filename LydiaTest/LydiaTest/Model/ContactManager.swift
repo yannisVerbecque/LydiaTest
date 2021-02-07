@@ -18,7 +18,18 @@ class ContactManager: NSObject {
     // Download post and decode them from JSON to instantiate Post object
     func downloadContacts(completion: @escaping (_ isCompleted: Bool) -> Void) {
         do {
-            try DownloadManager.downloadWithURL(contactURLString, completion: { [weak self] (data, response, error) in
+            var seedURLString: String = String()
+            if let firstRequest = self.resquests.first {
+                seedURLString = "&seed=\(firstRequest.info.seed)"
+            }
+            var pageURLString: String = String()
+            if let lastRequest = self.resquests.last {
+                pageURLString = "&page=\(lastRequest.info.page + 1)"
+            }
+            
+            let URLToRequest: String = contactURLString.appending(seedURLString).appending(pageURLString)
+            
+            try DownloadManager.downloadWithURL(URLToRequest, completion: { [weak self] (data, response, error) in
                 guard error == nil else {
                     completion(false)
                    return
@@ -32,7 +43,7 @@ class ContactManager: NSObject {
                 do {
                     // throws: `DecodingError.dataCorrupted` if cannot decode JSON
                     let request: ContactRequest = try JSONDecoder().decode(ContactRequest.self, from: downloadedData)
-                    self?.resquests = [request]
+                    self?.resquests.append(request)
                     completion(true)
                 } catch DecodingError.keyNotFound(let key, let context) {
                     Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
