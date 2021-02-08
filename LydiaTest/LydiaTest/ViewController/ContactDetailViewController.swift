@@ -159,7 +159,7 @@ class ContactDetailViewController: UIViewController, Contactable {
             }
         }
         
-        self.timezoneTimeLabel.text = "\(contact.location.timezone.description)"
+        self.timezoneTimeLabel.text = "\(contact.location.timezone.detail)"
         self.phoneLabel.text = "Phone: \(contact.phone)"
         self.cellPhoneLabel.text = "Cellphone: \(contact.cell)"
         self.emailLabel.text = "Email: \(contact.email)"

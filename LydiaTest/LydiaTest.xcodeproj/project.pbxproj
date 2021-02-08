@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2125C9BFC1007AAB76 /* AppDelegate.swift */; };
 		0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2525C9BFC1007AAB76 /* ContactListViewController.swift */; };
-		0E2B4F2C25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2A25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld */; };
 		0E2B4F2E25C9BFC2007AAB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2D25C9BFC2007AAB76 /* Assets.xcassets */; };
 		0E2B4F3125C9BFC2007AAB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2F25C9BFC2007AAB76 /* LaunchScreen.storyboard */; };
 		0E2B4F3C25C9BFC2007AAB76 /* LydiaTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F3B25C9BFC2007AAB76 /* LydiaTestTests.swift */; };
@@ -18,6 +17,7 @@
 		0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */; };
 		0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */; };
 		0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */; };
+		0EAFEEF425D0E59500DC8B6E /* LydiaTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2A25C9BFC1007AAB76 /* LydiaTestModel.xcdatamodeld */; };
 		0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */; };
 		0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FB225CB49D400D6D5AF /* ContactManager.swift */; };
 /* End PBXBuildFile section */
@@ -115,7 +115,6 @@
 				0E2B4F2D25C9BFC2007AAB76 /* Assets.xcassets */,
 				0E2B4F2F25C9BFC2007AAB76 /* LaunchScreen.storyboard */,
 				0E2B4F3225C9BFC2007AAB76 /* Info.plist */,
-				0E2B4F2A25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld */,
 			);
 			path = LydiaTest;
 			sourceTree = "<group>";
@@ -151,6 +150,7 @@
 		0E2B4F6125C9FC89007AAB76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E2B4F2A25C9BFC1007AAB76 /* LydiaTestModel.xcdatamodeld */,
 				0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */,
 				0E2B4F6225C9FCA4007AAB76 /* Contact.swift */,
 				0EB38FB225CB49D400D6D5AF /* ContactManager.swift */,
@@ -292,10 +292,10 @@
 				0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */,
 				0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */,
 				0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */,
-				0E2B4F2C25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld in Sources */,
 				0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */,
 				0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */,
 				0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */,
+				0EAFEEF425D0E59500DC8B6E /* LydiaTestModel.xcdatamodeld in Sources */,
 				0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,13 +623,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0E2B4F2A25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld */ = {
+		0E2B4F2A25C9BFC1007AAB76 /* LydiaTestModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				0E2B4F2B25C9BFC1007AAB76 /* LydiaTest.xcdatamodel */,
 			);
 			currentVersion = 0E2B4F2B25C9BFC1007AAB76 /* LydiaTest.xcdatamodel */;
-			path = LydiaTest.xcdatamodeld;
+			path = LydiaTestModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

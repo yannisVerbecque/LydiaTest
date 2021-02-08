@@ -24,7 +24,12 @@ struct Contact: Decodable {
     }
     struct Timezone: Decodable {
         let offset: String
-        let description: String
+        let detail: String
+        
+        enum CodingKeys: String, CodingKey {
+            case offset
+            case detail = "description"
+        }
     }
     struct Location: Decodable {
         let street: Street

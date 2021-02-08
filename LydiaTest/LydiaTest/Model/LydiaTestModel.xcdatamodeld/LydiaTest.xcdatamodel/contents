@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Name"/>
+    </entity>
+    <entity name="ContactRequest" representedClassName="ContactRequest" syncable="YES">
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Info"/>
+        <relationship name="results" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact"/>
+    </entity>
+    <entity name="Coordinate" representedClassName="Coordinate" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Info" representedClassName="Info" syncable="YES">
+        <attribute name="page" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="results" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="seed" optional="YES" attributeType="String"/>
+        <attribute name="version" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES"/>
+    <entity name="Name" representedClassName="Name" syncable="YES">
+        <attribute name="first" attributeType="String"/>
+        <attribute name="last" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+    </entity>
+    <entity name="Street" representedClassName="Street" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Timezone" representedClassName="Timezone" syncable="YES">
+        <attribute name="attribute1" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Contact" positionX="-512.64111328125" positionY="-343.5293273925781" width="128" height="73"/>
+        <element name="ContactRequest" positionX="-248.754638671875" positionY="-516.5658874511719" width="187.3775634765625" height="73"/>
+        <element name="Info" positionX="-126.6685180664062" positionY="-294.2921142578125" width="128" height="103"/>
+        <element name="Name" positionX="-552.8316040039062" positionY="-40.9609375" width="128" height="88"/>
+        <element name="Location" positionX="-323.9181518554688" positionY="-123.0364990234375" width="128" height="43"/>
+        <element name="Street" positionX="-174.6013793945312" positionY="-123.2879028320312" width="128" height="73"/>
+        <element name="Coordinate" positionX="-4.3939208984375" positionY="-117.679931640625" width="128" height="73"/>
+        <element name="Timezone" positionX="-342" positionY="-252" width="128" height="58"/>
+    </elements>
+</model>
