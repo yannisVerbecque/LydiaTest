@@ -6,44 +6,51 @@
         <attribute name="gender" attributeType="String"/>
         <attribute name="nat" attributeType="String"/>
         <attribute name="phone" attributeType="String"/>
-        <relationship name="dob" maxCount="1" deletionRule="Nullify" destinationEntity="DateEvent"/>
-        <relationship name="id" maxCount="1" deletionRule="Nullify" destinationEntity="Id"/>
-        <relationship name="location" maxCount="1" deletionRule="Nullify" destinationEntity="Location"/>
-        <relationship name="login" maxCount="1" deletionRule="Nullify" destinationEntity="Login"/>
-        <relationship name="name" maxCount="1" deletionRule="Nullify" destinationEntity="Name"/>
-        <relationship name="picture" maxCount="1" deletionRule="Nullify" destinationEntity="PictureLink"/>
-        <relationship name="registered" maxCount="1" deletionRule="Nullify" destinationEntity="DateEvent"/>
+        <relationship name="contactRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactRequest" inverseName="results" inverseEntity="ContactRequest"/>
+        <relationship name="dob" maxCount="1" deletionRule="Nullify" destinationEntity="DateEvent" inverseName="contact" inverseEntity="DateEvent"/>
+        <relationship name="id" maxCount="1" deletionRule="Nullify" destinationEntity="Id" inverseName="contact" inverseEntity="Id"/>
+        <relationship name="location" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="contact" inverseEntity="Location"/>
+        <relationship name="login" maxCount="1" deletionRule="Nullify" destinationEntity="Login" inverseName="contact" inverseEntity="Login"/>
+        <relationship name="name" maxCount="1" deletionRule="Nullify" destinationEntity="Name" inverseName="contact" inverseEntity="Name"/>
+        <relationship name="picture" maxCount="1" deletionRule="Nullify" destinationEntity="PictureLink" inverseName="contact" inverseEntity="PictureLink"/>
+        <relationship name="registered" maxCount="1" deletionRule="Nullify" destinationEntity="DateEvent" inverseName="contact2" inverseEntity="DateEvent"/>
     </entity>
     <entity name="ContactRequest" representedClassName="ContactRequest" syncable="YES">
-        <relationship name="info" maxCount="1" deletionRule="Nullify" destinationEntity="Info"/>
-        <relationship name="results" toMany="YES" deletionRule="Nullify" destinationEntity="Contact"/>
+        <relationship name="info" maxCount="1" deletionRule="Nullify" destinationEntity="Info" inverseName="contactRequest" inverseEntity="Info"/>
+        <relationship name="results" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="contactRequest" inverseEntity="Contact"/>
     </entity>
     <entity name="Coordinate" representedClassName="Coordinate" syncable="YES">
         <attribute name="latitude" attributeType="String"/>
         <attribute name="longitude" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="coordinates" inverseEntity="Location"/>
     </entity>
     <entity name="DateEvent" representedClassName="DateEvent" syncable="YES">
         <attribute name="age" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="dob" inverseEntity="Contact"/>
+        <relationship name="contact2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="registered" inverseEntity="Contact"/>
     </entity>
     <entity name="Id" representedClassName="Id" syncable="YES">
         <attribute name="name" attributeType="String"/>
         <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="id" inverseEntity="Contact"/>
     </entity>
     <entity name="Info" representedClassName="Info" syncable="YES">
         <attribute name="page" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="results" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="seed" attributeType="String"/>
         <attribute name="version" attributeType="String"/>
+        <relationship name="contactRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactRequest" inverseName="info" inverseEntity="ContactRequest"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="city" attributeType="String"/>
         <attribute name="country" attributeType="String"/>
         <attribute name="postcode" attributeType="String"/>
         <attribute name="state" attributeType="String"/>
-        <relationship name="coordinates" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinate"/>
-        <relationship name="street" maxCount="1" deletionRule="Nullify" destinationEntity="Street"/>
-        <relationship name="timezone" maxCount="1" deletionRule="Nullify" destinationEntity="Timezone"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="location" inverseEntity="Contact"/>
+        <relationship name="coordinates" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinate" inverseName="location" inverseEntity="Coordinate"/>
+        <relationship name="street" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="location" inverseEntity="Street"/>
+        <relationship name="timezone" maxCount="1" deletionRule="Nullify" destinationEntity="Timezone" inverseName="location" inverseEntity="Timezone"/>
     </entity>
     <entity name="Login" representedClassName="Login" syncable="YES">
         <attribute name="md5" attributeType="String"/>
@@ -53,37 +60,42 @@
         <attribute name="sha256" attributeType="String"/>
         <attribute name="username" attributeType="String"/>
         <attribute name="uuid" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="login" inverseEntity="Contact"/>
     </entity>
     <entity name="Name" representedClassName="Name" syncable="YES">
         <attribute name="first" attributeType="String"/>
         <attribute name="last" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="name" inverseEntity="Contact"/>
     </entity>
     <entity name="PictureLink" representedClassName="PictureLink" syncable="YES">
         <attribute name="large" attributeType="String"/>
         <attribute name="medium" attributeType="String"/>
         <attribute name="thumbnail" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="picture" inverseEntity="Contact"/>
     </entity>
     <entity name="Street" representedClassName="Street" syncable="YES">
         <attribute name="name" attributeType="String"/>
         <attribute name="number" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="street" inverseEntity="Location"/>
     </entity>
     <entity name="Timezone" representedClassName="Timezone" syncable="YES">
         <attribute name="detail" attributeType="String"/>
         <attribute name="offset" attributeType="String"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="timezone" inverseEntity="Location"/>
     </entity>
     <elements>
-        <element name="Contact" positionX="-614.48681640625" positionY="-716.2654571533203" width="128" height="223"/>
-        <element name="ContactRequest" positionX="-306.4828491210938" positionY="-750.7288360595703" width="187.3775634765625" height="73"/>
-        <element name="Info" positionX="10.83001708984375" positionY="-750.2458343505859" width="128" height="103"/>
-        <element name="Name" positionX="-893.1632690429688" positionY="-336.711669921875" width="128" height="88"/>
-        <element name="Location" positionX="-581.123779296875" positionY="-332.2750244140625" width="128" height="148"/>
-        <element name="Street" positionX="-552.7136840820312" positionY="-117.9281616210938" width="128" height="73"/>
-        <element name="Coordinate" positionX="-448.2595825195312" positionY="-25.65643310546875" width="128" height="73"/>
-        <element name="Timezone" positionX="-609.1300659179688" positionY="-6.4356689453125" width="128" height="73"/>
-        <element name="Login" positionX="-308.7425537109375" positionY="-173.2648315429688" width="128" height="134"/>
-        <element name="DateEvent" positionX="-108.0064697265625" positionY="-228.944091796875" width="128" height="59"/>
-        <element name="Id" positionX="-29.067138671875" positionY="-472.7359008789062" width="128" height="59"/>
-        <element name="PictureLink" positionX="-27.2130126953125" positionY="-397.0309143066406" width="128" height="74"/>
+        <element name="Info" positionX="-44.43634033203125" positionY="-785.8300476074219" width="128" height="118"/>
+        <element name="Street" positionX="-592.02001953125" positionY="-127.5865478515625" width="128" height="88"/>
+        <element name="Coordinate" positionX="-494.1195678710938" positionY="-251.336669921875" width="128" height="88"/>
+        <element name="Timezone" positionX="-760.8271484375" positionY="-82.54132080078125" width="128" height="88"/>
+        <element name="Login" positionX="-260.3086547851562" positionY="-177.177490234375" width="128" height="163"/>
+        <element name="DateEvent" positionX="-321.7835083007812" positionY="-480.2108764648438" width="128" height="103"/>
+        <element name="Id" positionX="-42.2391357421875" positionY="-605.4484252929688" width="128" height="88"/>
+        <element name="PictureLink" positionX="128.2821044921875" positionY="-397.3720092773438" width="128" height="103"/>
+        <element name="Name" positionX="125.2279052734375" positionY="-531.8906555175781" width="128" height="103"/>
+        <element name="Contact" positionX="-587.8429565429688" positionY="-683.5751800537109" width="128" height="238"/>
+        <element name="Location" positionX="-727.5501708984375" positionY="-442.4869384765625" width="128" height="163"/>
+        <element name="ContactRequest" positionX="-284.9578857421875" positionY="-741.2363433837891" width="128" height="73"/>
     </elements>
 </model>
