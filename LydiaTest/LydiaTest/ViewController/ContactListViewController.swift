@@ -24,6 +24,7 @@ class ContactListViewController: UIViewController {
     
     private var contactManager: ContactManager = ContactManager()
     private var isLoadingData: Bool = false
+    private let cache = NSCache<NSString, UIImage>()
     
     // Called when view is fully loaded
     override func viewDidLoad() {
@@ -90,9 +91,8 @@ class ContactListViewController: UIViewController {
     private func downloadTenContact() -> Void {
         self.isLoadingData = true
         contactManager.downloadContacts { [weak self] (isDownloadSuccess) in
-            self?.isLoadingData = !isDownloadSuccess
             if isDownloadSuccess {
-                PersistentContainer.shared.saveContext()
+                self?.isLoadingData = false
             } else {
                 // fetch coredata last session saved
                 let request = ContactRequest.createFetchRequest()
@@ -128,6 +128,7 @@ extension ContactListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ContactTableViewCell(style: .default, reuseIdentifier: contactCellReuseIdentifier)
+        cell.cache = cache
         cell.contact = self.contactManager.getContactAtIndexPath(indexPath)
         return cell
     }
@@ -136,6 +137,28 @@ extension ContactListViewController: UITableViewDataSource {
 // MARK: UITableViewDataSourcePrefetching
 extension ContactListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        /*
+         * Caching UIImage for fast tableview load time
+         */
+        for indexPath in indexPaths {
+            guard let contact = self.contactManager.getContactAtIndexPath(indexPath) else { return }
+            let largePictureString = contact.picture.large
+            if let url = URL(string: largePictureString) {
+                // if the uiimage isn't cache
+                if (cache.object(forKey: largePictureString as NSString) == nil) {
+                    // download the image on a queue
+                    DispatchQueue.global().async { [weak self] in
+                        // Fetch Image Data
+                        if let data = try? Data(contentsOf: url) {
+                            // Create Image and Update Image View
+                            if let uiimg = UIImage(data: data) {
+                                self?.cache.setObject(uiimg, forKey: largePictureString as NSString)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

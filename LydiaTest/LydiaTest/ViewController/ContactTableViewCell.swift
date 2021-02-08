@@ -22,6 +22,7 @@ class ContactTableViewCell: UITableViewCell, Contactable {
     var firstlastLabel: UILabel = UILabel(frame: .zero)
     var nationalityLabel: UILabel = UILabel(frame: .zero)
     let margin: CGFloat = 16
+    var cache: NSCache<NSString, UIImage>? = nil
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -74,12 +75,24 @@ class ContactTableViewCell: UITableViewCell, Contactable {
     func setContact(_ contact: Contact) {
         firstlastLabel.text = "\(contact.name.first) \(contact.name.last)"
         nationalityLabel.text = "\(NSLocale.system.localizedString(forRegionCode: contact.nat) ?? contact.nat)"
-        DispatchQueue.global().async {
-            guard let imgURL = URL(string: contact.picture.large), let imgData = try? Data(contentsOf: imgURL) else {
-                return
-            }
-            DispatchQueue.main.async { [weak self] in
-                self?.contactImageView.image = UIImage(data: imgData)
+        
+        // Downloading the large image
+        guard let imgURL = URL(string: contact.picture.large), let imgData = try? Data(contentsOf: imgURL) else { return }
+        // if a cached version is available
+        if let cachedVersion = self.cache?.object(forKey: contact.picture.large as NSString) {
+            // use the cached version
+            self.contactImageView.image = cachedVersion
+        } else {
+            DispatchQueue.global().async {
+                // create it from scratch by
+                // Downloading the images on a queue
+                if let uiimg = UIImage(data: imgData) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.contactImageView.image = uiimg
+                        // then store in the cache
+                        self?.cache?.setObject(uiimg, forKey: contact.picture.large as NSString)
+                    }
+                }
             }
         }
     }

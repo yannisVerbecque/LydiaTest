@@ -30,6 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        PersistentContainer.shared.saveContext(backgroundContext: nil)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        PersistentContainer.shared.saveContext(backgroundContext: nil)
+    }
 
 //    // MARK: - Core Data stack
 //
