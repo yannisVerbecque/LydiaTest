@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ContactTableViewCell: UITableViewCell {
+class ContactTableViewCell: UITableViewCell, Contactable {
     
     var contact: Contact? {
         didSet {
@@ -46,6 +46,14 @@ class ContactTableViewCell: UITableViewCell {
         nationalityLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(nationalityLabel)
         
+        setConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setConstraints() -> Void {
         NSLayoutConstraint.activate([
             contactImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: self.margin),
             contactImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -self.margin),
@@ -60,10 +68,6 @@ class ContactTableViewCell: UITableViewCell {
             nationalityLabel.trailingAnchor.constraint(equalTo: firstlastLabel.trailingAnchor),
             nationalityLabel.heightAnchor.constraint(equalTo: firstlastLabel.heightAnchor),
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // Populate the cell with data

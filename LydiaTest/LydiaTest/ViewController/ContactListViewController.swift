@@ -100,6 +100,9 @@ class ContactListViewController: UIViewController {
 // MARK: UITableViewDelegate
 extension ContactListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contactDetailViewController = ContactDetailViewController()
+        contactDetailViewController.contact = self.contactManager.getContactAtIndexPath(indexPath)
+        self.navigationController?.pushViewController(contactDetailViewController, animated: true)
     }
 }
 

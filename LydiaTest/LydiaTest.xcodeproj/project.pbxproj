@@ -16,6 +16,8 @@
 		0E2B4F4725C9BFC2007AAB76 /* LydiaTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F4625C9BFC2007AAB76 /* LydiaTestUITests.swift */; };
 		0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F6225C9FCA4007AAB76 /* Contact.swift */; };
 		0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */; };
+		0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */; };
+		0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */; };
 		0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */; };
 		0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FB225CB49D400D6D5AF /* ContactManager.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		0E2B4F4825C9BFC2007AAB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2B4F6225C9FCA4007AAB76 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
 		0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		0EB38FB225CB49D400D6D5AF /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0E2B4F2525C9BFC1007AAB76 /* ContactListViewController.swift */,
+				0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */,
 				0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */,
 			);
 			path = ViewController;
@@ -149,6 +154,7 @@
 				0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */,
 				0E2B4F6225C9FCA4007AAB76 /* Contact.swift */,
 				0EB38FB225CB49D400D6D5AF /* ContactManager.swift */,
+				0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,10 +290,12 @@
 			files = (
 				0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */,
 				0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */,
+				0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */,
 				0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */,
 				0E2B4F2C25C9BFC1007AAB76 /* LydiaTest.xcdatamodeld in Sources */,
 				0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */,
 				0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */,
+				0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */,
 				0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

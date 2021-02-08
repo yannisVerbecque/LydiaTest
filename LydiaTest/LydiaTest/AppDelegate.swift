@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let listVC = ContactListViewController()
         let navViewController = UINavigationController(rootViewController: listVC)
         navViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        navViewController.navigationBar.prefersLargeTitles = true
         
         window.rootViewController = navViewController
         self.window = window
