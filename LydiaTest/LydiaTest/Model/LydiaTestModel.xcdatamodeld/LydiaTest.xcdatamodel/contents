@@ -85,17 +85,17 @@
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="timezone" inverseEntity="Location"/>
     </entity>
     <elements>
-        <element name="Info" positionX="-44.43634033203125" positionY="-785.8300476074219" width="128" height="118"/>
-        <element name="Street" positionX="-592.02001953125" positionY="-127.5865478515625" width="128" height="88"/>
-        <element name="Coordinate" positionX="-494.1195678710938" positionY="-251.336669921875" width="128" height="88"/>
-        <element name="Timezone" positionX="-760.8271484375" positionY="-82.54132080078125" width="128" height="88"/>
-        <element name="Login" positionX="-260.3086547851562" positionY="-177.177490234375" width="128" height="163"/>
-        <element name="DateEvent" positionX="-321.7835083007812" positionY="-480.2108764648438" width="128" height="103"/>
-        <element name="Id" positionX="-42.2391357421875" positionY="-605.4484252929688" width="128" height="88"/>
-        <element name="PictureLink" positionX="128.2821044921875" positionY="-397.3720092773438" width="128" height="103"/>
-        <element name="Name" positionX="125.2279052734375" positionY="-531.8906555175781" width="128" height="103"/>
-        <element name="Contact" positionX="-587.8429565429688" positionY="-683.5751800537109" width="128" height="238"/>
-        <element name="Location" positionX="-727.5501708984375" positionY="-442.4869384765625" width="128" height="163"/>
-        <element name="ContactRequest" positionX="-284.9578857421875" positionY="-741.2363433837891" width="128" height="73"/>
+        <element name="Contact" positionX="-587.8429565429688" positionY="-683.5751800537109" width="128" height="224"/>
+        <element name="ContactRequest" positionX="-284.9578857421875" positionY="-741.2363433837891" width="128" height="59"/>
+        <element name="Coordinate" positionX="-494.1195678710938" positionY="-251.336669921875" width="128" height="74"/>
+        <element name="DateEvent" positionX="-321.7835083007812" positionY="-480.2108764648438" width="128" height="89"/>
+        <element name="Id" positionX="-42.2391357421875" positionY="-605.4484252929688" width="128" height="74"/>
+        <element name="Info" positionX="-44.43634033203125" positionY="-785.8300476074219" width="128" height="104"/>
+        <element name="Location" positionX="-727.5501708984375" positionY="-442.4869384765625" width="128" height="149"/>
+        <element name="Login" positionX="-260.3086547851562" positionY="-177.177490234375" width="128" height="149"/>
+        <element name="Name" positionX="125.2279052734375" positionY="-531.8906555175781" width="128" height="89"/>
+        <element name="PictureLink" positionX="128.2821044921875" positionY="-397.3720092773438" width="128" height="89"/>
+        <element name="Street" positionX="-592.02001953125" positionY="-127.5865478515625" width="128" height="74"/>
+        <element name="Timezone" positionX="-760.8271484375" positionY="-82.54132080078125" width="128" height="74"/>
     </elements>
 </model>

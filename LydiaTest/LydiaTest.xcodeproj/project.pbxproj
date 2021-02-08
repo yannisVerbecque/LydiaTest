@@ -13,11 +13,37 @@
 		0E2B4F3125C9BFC2007AAB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2F25C9BFC2007AAB76 /* LaunchScreen.storyboard */; };
 		0E2B4F3C25C9BFC2007AAB76 /* LydiaTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F3B25C9BFC2007AAB76 /* LydiaTestTests.swift */; };
 		0E2B4F4725C9BFC2007AAB76 /* LydiaTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F4625C9BFC2007AAB76 /* LydiaTestUITests.swift */; };
-		0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F6225C9FCA4007AAB76 /* Contact.swift */; };
+		0E8DAE1125D1BA8100AEF43E /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8DAE1025D1BA8100AEF43E /* PersistentContainer.swift */; };
+		0EAEC7A625D1245100CD4EF8 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7A525D1245100CD4EF8 /* CodingUserInfoKey.swift */; };
+		0EAEC7AB25D1247D00CD4EF8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7AA25D1247D00CD4EF8 /* Error.swift */; };
+		0EAEC7BB25D1262B00CD4EF8 /* Info+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7AF25D1262B00CD4EF8 /* Info+CoreDataProperties.swift */; };
+		0EAEC7BC25D1262B00CD4EF8 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B025D1262B00CD4EF8 /* Location+CoreDataProperties.swift */; };
+		0EAEC7BD25D1262B00CD4EF8 /* Street+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B125D1262B00CD4EF8 /* Street+CoreDataProperties.swift */; };
+		0EAEC7BE25D1262B00CD4EF8 /* ContactRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B225D1262B00CD4EF8 /* ContactRequest+CoreDataProperties.swift */; };
+		0EAEC7BF25D1262B00CD4EF8 /* Timezone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B325D1262B00CD4EF8 /* Timezone+CoreDataProperties.swift */; };
+		0EAEC7C025D1262B00CD4EF8 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B425D1262B00CD4EF8 /* Contact+CoreDataProperties.swift */; };
+		0EAEC7C125D1262B00CD4EF8 /* DateEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B525D1262B00CD4EF8 /* DateEvent+CoreDataProperties.swift */; };
+		0EAEC7C225D1262B00CD4EF8 /* Name+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B625D1262B00CD4EF8 /* Name+CoreDataProperties.swift */; };
+		0EAEC7C325D1262B00CD4EF8 /* PictureLink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B725D1262B00CD4EF8 /* PictureLink+CoreDataProperties.swift */; };
+		0EAEC7C425D1262B00CD4EF8 /* Login+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B825D1262B00CD4EF8 /* Login+CoreDataProperties.swift */; };
+		0EAEC7C525D1262B00CD4EF8 /* Id+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7B925D1262B00CD4EF8 /* Id+CoreDataProperties.swift */; };
+		0EAEC7C625D1262B00CD4EF8 /* Coordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEC7BA25D1262B00CD4EF8 /* Coordinate+CoreDataProperties.swift */; };
 		0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */; };
 		0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */; };
 		0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */; };
 		0EAFEEF425D0E59500DC8B6E /* LydiaTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B4F2A25C9BFC1007AAB76 /* LydiaTestModel.xcdatamodeld */; };
+		0EAFEFD925D11D1B00DC8B6E /* Id+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFC125D11D1B00DC8B6E /* Id+CoreDataClass.swift */; };
+		0EAFEFDB25D11D1B00DC8B6E /* Coordinate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFC325D11D1B00DC8B6E /* Coordinate+CoreDataClass.swift */; };
+		0EAFEFDD25D11D1B00DC8B6E /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFC525D11D1B00DC8B6E /* Contact+CoreDataClass.swift */; };
+		0EAFEFDF25D11D1B00DC8B6E /* Info+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFC725D11D1B00DC8B6E /* Info+CoreDataClass.swift */; };
+		0EAFEFE125D11D1B00DC8B6E /* Timezone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFC925D11D1B00DC8B6E /* Timezone+CoreDataClass.swift */; };
+		0EAFEFE325D11D1B00DC8B6E /* Name+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFCB25D11D1B00DC8B6E /* Name+CoreDataClass.swift */; };
+		0EAFEFE525D11D1B00DC8B6E /* ContactRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFCD25D11D1B00DC8B6E /* ContactRequest+CoreDataClass.swift */; };
+		0EAFEFE725D11D1B00DC8B6E /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFCF25D11D1B00DC8B6E /* Location+CoreDataClass.swift */; };
+		0EAFEFE925D11D1B00DC8B6E /* Street+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFD125D11D1B00DC8B6E /* Street+CoreDataClass.swift */; };
+		0EAFEFEB25D11D1B00DC8B6E /* DateEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFD325D11D1B00DC8B6E /* DateEvent+CoreDataClass.swift */; };
+		0EAFEFED25D11D1B00DC8B6E /* PictureLink+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFD525D11D1B00DC8B6E /* PictureLink+CoreDataClass.swift */; };
+		0EAFEFEF25D11D1B00DC8B6E /* Login+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFEFD725D11D1B00DC8B6E /* Login+CoreDataClass.swift */; };
 		0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */; };
 		0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB38FB225CB49D400D6D5AF /* ContactManager.swift */; };
 /* End PBXBuildFile section */
@@ -54,9 +80,36 @@
 		0E2B4F4625C9BFC2007AAB76 /* LydiaTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LydiaTestUITests.swift; sourceTree = "<group>"; };
 		0E2B4F4825C9BFC2007AAB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E2B4F6225C9FCA4007AAB76 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		0E8DAE1025D1BA8100AEF43E /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		0EAEC7A525D1245100CD4EF8 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		0EAEC7AA25D1247D00CD4EF8 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		0EAEC7AF25D1262B00CD4EF8 /* Info+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Info+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B025D1262B00CD4EF8 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B125D1262B00CD4EF8 /* Street+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Street+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B225D1262B00CD4EF8 /* ContactRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B325D1262B00CD4EF8 /* Timezone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timezone+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B425D1262B00CD4EF8 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B525D1262B00CD4EF8 /* DateEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B625D1262B00CD4EF8 /* Name+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B725D1262B00CD4EF8 /* PictureLink+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PictureLink+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B825D1262B00CD4EF8 /* Login+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7B925D1262B00CD4EF8 /* Id+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0EAEC7BA25D1262B00CD4EF8 /* Coordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0EAFEED525CC8AB300DC8B6E /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		0EAFEEDA25D0504B00DC8B6E /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
+		0EAFEFC125D11D1B00DC8B6E /* Id+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFC325D11D1B00DC8B6E /* Coordinate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFC525D11D1B00DC8B6E /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFC725D11D1B00DC8B6E /* Info+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Info+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFC925D11D1B00DC8B6E /* Timezone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timezone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFCB25D11D1B00DC8B6E /* Name+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFCD25D11D1B00DC8B6E /* ContactRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFCF25D11D1B00DC8B6E /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFD125D11D1B00DC8B6E /* Street+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Street+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFD325D11D1B00DC8B6E /* DateEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFD525D11D1B00DC8B6E /* PictureLink+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PictureLink+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0EAFEFD725D11D1B00DC8B6E /* Login+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0EB38FAA25CB495400D6D5AF /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		0EB38FB225CB49D400D6D5AF /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +142,30 @@
 		0E2B4F1525C9BFC1007AAB76 = {
 			isa = PBXGroup;
 			children = (
+				0EAEC7AF25D1262B00CD4EF8 /* Info+CoreDataProperties.swift */,
+				0EAEC7B025D1262B00CD4EF8 /* Location+CoreDataProperties.swift */,
+				0EAEC7B125D1262B00CD4EF8 /* Street+CoreDataProperties.swift */,
+				0EAEC7B225D1262B00CD4EF8 /* ContactRequest+CoreDataProperties.swift */,
+				0EAEC7B325D1262B00CD4EF8 /* Timezone+CoreDataProperties.swift */,
+				0EAEC7B425D1262B00CD4EF8 /* Contact+CoreDataProperties.swift */,
+				0EAEC7B525D1262B00CD4EF8 /* DateEvent+CoreDataProperties.swift */,
+				0EAEC7B625D1262B00CD4EF8 /* Name+CoreDataProperties.swift */,
+				0EAEC7B725D1262B00CD4EF8 /* PictureLink+CoreDataProperties.swift */,
+				0EAEC7B825D1262B00CD4EF8 /* Login+CoreDataProperties.swift */,
+				0EAEC7B925D1262B00CD4EF8 /* Id+CoreDataProperties.swift */,
+				0EAEC7BA25D1262B00CD4EF8 /* Coordinate+CoreDataProperties.swift */,
+				0EAFEFC125D11D1B00DC8B6E /* Id+CoreDataClass.swift */,
+				0EAFEFC325D11D1B00DC8B6E /* Coordinate+CoreDataClass.swift */,
+				0EAFEFC525D11D1B00DC8B6E /* Contact+CoreDataClass.swift */,
+				0EAFEFC725D11D1B00DC8B6E /* Info+CoreDataClass.swift */,
+				0EAFEFC925D11D1B00DC8B6E /* Timezone+CoreDataClass.swift */,
+				0EAFEFCB25D11D1B00DC8B6E /* Name+CoreDataClass.swift */,
+				0EAFEFCD25D11D1B00DC8B6E /* ContactRequest+CoreDataClass.swift */,
+				0EAFEFCF25D11D1B00DC8B6E /* Location+CoreDataClass.swift */,
+				0EAFEFD125D11D1B00DC8B6E /* Street+CoreDataClass.swift */,
+				0EAFEFD325D11D1B00DC8B6E /* DateEvent+CoreDataClass.swift */,
+				0EAFEFD525D11D1B00DC8B6E /* PictureLink+CoreDataClass.swift */,
+				0EAFEFD725D11D1B00DC8B6E /* Login+CoreDataClass.swift */,
 				0E2B4F2025C9BFC1007AAB76 /* LydiaTest */,
 				0E2B4F3A25C9BFC2007AAB76 /* LydiaTestTests */,
 				0E2B4F4525C9BFC2007AAB76 /* LydiaTestUITests */,
@@ -155,6 +232,9 @@
 				0E2B4F6225C9FCA4007AAB76 /* Contact.swift */,
 				0EB38FB225CB49D400D6D5AF /* ContactManager.swift */,
 				0EAFEEDF25D05F5300DC8B6E /* Contactable.swift */,
+				0EAEC7A525D1245100CD4EF8 /* CodingUserInfoKey.swift */,
+				0EAEC7AA25D1247D00CD4EF8 /* Error.swift */,
+				0E8DAE1025D1BA8100AEF43E /* PersistentContainer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,14 +368,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2B4F6325C9FCA4007AAB76 /* Contact.swift in Sources */,
+				0EAEC7BF25D1262B00CD4EF8 /* Timezone+CoreDataProperties.swift in Sources */,
+				0EAEC7A625D1245100CD4EF8 /* CodingUserInfoKey.swift in Sources */,
+				0EAFEFDB25D11D1B00DC8B6E /* Coordinate+CoreDataClass.swift in Sources */,
+				0EAEC7BB25D1262B00CD4EF8 /* Info+CoreDataProperties.swift in Sources */,
+				0EAFEFDF25D11D1B00DC8B6E /* Info+CoreDataClass.swift in Sources */,
+				0EAEC7BE25D1262B00CD4EF8 /* ContactRequest+CoreDataProperties.swift in Sources */,
 				0EB38FAB25CB495400D6D5AF /* DownloadManager.swift in Sources */,
 				0EAFEEE025D05F5300DC8B6E /* Contactable.swift in Sources */,
 				0E2B4F2625C9BFC1007AAB76 /* ContactListViewController.swift in Sources */,
 				0EAFEED625CC8AB300DC8B6E /* ContactTableViewCell.swift in Sources */,
+				0EAEC7BC25D1262B00CD4EF8 /* Location+CoreDataProperties.swift in Sources */,
+				0EAEC7C525D1262B00CD4EF8 /* Id+CoreDataProperties.swift in Sources */,
+				0EAFEFDD25D11D1B00DC8B6E /* Contact+CoreDataClass.swift in Sources */,
+				0EAEC7C225D1262B00CD4EF8 /* Name+CoreDataProperties.swift in Sources */,
+				0EAEC7C425D1262B00CD4EF8 /* Login+CoreDataProperties.swift in Sources */,
+				0EAEC7C625D1262B00CD4EF8 /* Coordinate+CoreDataProperties.swift in Sources */,
 				0EB38FB325CB49D400D6D5AF /* ContactManager.swift in Sources */,
+				0EAFEFE725D11D1B00DC8B6E /* Location+CoreDataClass.swift in Sources */,
+				0EAFEFE325D11D1B00DC8B6E /* Name+CoreDataClass.swift in Sources */,
+				0EAFEFEF25D11D1B00DC8B6E /* Login+CoreDataClass.swift in Sources */,
+				0EAEC7C325D1262B00CD4EF8 /* PictureLink+CoreDataProperties.swift in Sources */,
+				0EAEC7C025D1262B00CD4EF8 /* Contact+CoreDataProperties.swift in Sources */,
+				0EAEC7C125D1262B00CD4EF8 /* DateEvent+CoreDataProperties.swift in Sources */,
+				0EAFEFD925D11D1B00DC8B6E /* Id+CoreDataClass.swift in Sources */,
+				0EAFEFED25D11D1B00DC8B6E /* PictureLink+CoreDataClass.swift in Sources */,
+				0EAEC7AB25D1247D00CD4EF8 /* Error.swift in Sources */,
 				0EAFEEDB25D0504B00DC8B6E /* ContactDetailViewController.swift in Sources */,
+				0EAFEFEB25D11D1B00DC8B6E /* DateEvent+CoreDataClass.swift in Sources */,
 				0EAFEEF425D0E59500DC8B6E /* LydiaTestModel.xcdatamodeld in Sources */,
+				0EAEC7BD25D1262B00CD4EF8 /* Street+CoreDataProperties.swift in Sources */,
+				0EAFEFE925D11D1B00DC8B6E /* Street+CoreDataClass.swift in Sources */,
+				0EAFEFE125D11D1B00DC8B6E /* Timezone+CoreDataClass.swift in Sources */,
+				0E8DAE1125D1BA8100AEF43E /* PersistentContainer.swift in Sources */,
+				0EAFEFE525D11D1B00DC8B6E /* ContactRequest+CoreDataClass.swift in Sources */,
 				0E2B4F2225C9BFC1007AAB76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

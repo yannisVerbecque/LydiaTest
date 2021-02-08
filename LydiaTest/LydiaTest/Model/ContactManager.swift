@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 // This class will perform all fetching data
 class ContactManager: NSObject {
@@ -41,8 +42,11 @@ class ContactManager: NSObject {
                 }
                 
                 do {
+                    let container = PersistentContainer.shared
+                    let decoder = JSONDecoder()
+                    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = container.viewContext
                     // throws: `DecodingError.dataCorrupted` if cannot decode JSON
-                    let request: ContactRequest = try JSONDecoder().decode(ContactRequest.self, from: downloadedData)
+                    let request: ContactRequest = try decoder.decode(ContactRequest.self, from: downloadedData)
                     self?.resquests.append(request)
                     completion(true)
                 } catch DecodingError.keyNotFound(let key, let context) {
@@ -76,6 +80,10 @@ class ContactManager: NSObject {
         if indexPath.row >= self.count || indexPath.row < 0 {
             return nil
         }
-        return self.resquests.compactMap { $0.results }.flatMap { $0 }[indexPath.row]
+        let result = self.resquests.compactMap { (contactRequest) -> NSSet in
+            return contactRequest.results
+        }.flatMap({ $0 })[indexPath.row]
+        print("Results \(result)")
+        return result as? Contact
     }
 }

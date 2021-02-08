@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ContactListViewController: UIViewController {
 
@@ -30,6 +31,12 @@ class ContactListViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
         title = "People"
+        
+        PersistentContainer.shared.loadPersistentStores { storeDescription, error in
+            if let error = error {
+                print("Unresolved error \(error)")
+            }
+        }
         
         self.downloadTenContact()
         
@@ -83,13 +90,20 @@ class ContactListViewController: UIViewController {
     private func downloadTenContact() -> Void {
         self.isLoadingData = true
         contactManager.downloadContacts { [weak self] (isDownloadSuccess) in
+            self?.isLoadingData = !isDownloadSuccess
             if isDownloadSuccess {
-                self?.isLoadingData = false
-                DispatchQueue.main.async {
-                    self?.tableview.reloadData()
-                }
+                PersistentContainer.shared.saveContext()
             } else {
                 // fetch coredata last session saved
+                let request = ContactRequest.createFetchRequest()
+                do {
+                    self?.contactManager.resquests = try PersistentContainer.shared.viewContext.fetch(request)
+                } catch {
+                    print("Fetching failed")
+                }
+            }
+            DispatchQueue.main.async {
+                self?.tableview.reloadData()
             }
         }
     }
